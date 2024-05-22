@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
+
 """import a module"""
 
 from base_caching import BaseCaching
 
 """create a class"""
+
 
 class FIFOCache(BaseCaching):
     """class that inherits from BaseCaching"""
@@ -13,7 +15,7 @@ class FIFOCache(BaseCaching):
         super().__init__()
         self.order_keys = []
 
-         def put(self, key, item):
+    def put(self, key, item):
         """functions that inserts items into the cache with FIFO strategy"""
         if key is None or item is None:
             return
@@ -29,7 +31,7 @@ class FIFOCache(BaseCaching):
 
         self.cache_data[key] = item
 
-        def get(self, key):
+    def get(self, key):
         """function that returns value linked to key"""
 
         if key is None:

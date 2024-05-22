@@ -1,21 +1,21 @@
 #!/usr/bin/env python3
 
-"""import module"""
+"""import a module"""
 
 from base_caching import BaseCaching
 
 """create a class"""
 
-class LRUCache(BaseCaching):
 
-     """class that inherits from BaseCaching"""
+class LRUCache(BaseCaching):
+    """class that inherits from BaseCaching"""
 
     def __init__(self):
-        """call parent class"""
+        """call the parent init"""
         super().__init__()
-         self.order_keys = []
+        self.order_keys = []
 
-           def put(self, key, item):
+    def put(self, key, item):
         """functions that inserts items into the cache with LRU strategy"""
         if key is None or item is None:
             return
@@ -42,4 +42,3 @@ class LRUCache(BaseCaching):
             self.order_keys.append(key)
             return self.cache_data[key]
         return None
-
